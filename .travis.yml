@@ -6,17 +6,17 @@ before_install:
 script:
   - docker run merajhussain/react-test npm test -- --coverage
 after_sucess:
-  - docker build -t merajhussain/multi-client ./client
-  - docker build -t merajhussian/multi-nginx ./nginx
-  - docker build -t merajhussain/multi-server ./server
-  - docker build -t merajhussain/multi-worker ./worker
+  - docker build -t merajhussain1/multi-client ./client
+  - docker build -t merajhussian1/multi-nginx ./nginx
+  - docker build -t merajhussain1/multi-server ./server
+  - docker build -t merajhussain1/multi-worker ./worker
 
   #login to docker cli
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" -password-stdin
   #take those images and push them to docker hub
-  - docker push merajhussain/multi-client
-  - docker push merajhussain/multi-nginx
-  - docker push merajhussain/multi-server
-  - docker push merajhussain/multi-worker
-  
+  - docker push merajhussain1/multi-client
+  - docker push merajhussain1/multi-nginx
+  - docker push merajhussain1/multi-server
+  - docker push merajhussain1/multi-worker
+
 
