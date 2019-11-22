@@ -5,13 +5,15 @@
             "name": "client",
             "image": "merajhussain1/multi-client",
             "hostname": "client",
-            "essential": false
+            "essential": false,
+            "memory": 128
         },
         {
             "name": "server",
             "image": "merajhussain1/multi-server",
             "hostname": "api",
-            "essential": false
+            "essential": false,
+            "memory": 128
 
 
         },
@@ -19,20 +21,23 @@
             "name": "worker",
             "image": "merajhussain1/multi-woker",
             "hostname": "worker",
-            "essential": false
+            "essential": false,
+            "memory": 128
         },
         {
             "name": "nginx",
             "image": "merajhussain1/multi-nginx",
             "hostname": "nginx",
             "essential": true,
+            "memory": 128,
             "portMappings": [
                 {
                     "hostPort": 80,
                     "containerPort": 80
 
                 }
-            ]
+            ],
+            "links":["client","server"]
         }
     ]
 }
