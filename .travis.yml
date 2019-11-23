@@ -22,17 +22,4 @@ after_sucess:
   ## logged in from ot 
 
 
-  deploy:
-    provider: elasticbeanstalk
-    region: testreg
-    app: multi-docker
-    env: myenv
-    bucket_name: bucket_name
-    bucket_path: docker-multi
-    on:
-      branch: master
-    access_key_id: $AWS_ACCESS_KEY
-    secret_access_key:
-      secure: $AWS_SECRET_KEY
-
-
+  
